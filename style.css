@@ -13,8 +13,12 @@ header {
     width: 100%;
 }
 .container h1 {
+    color: orange;
+    font-weight: bold;
+    font-size: 50px;
     float: left;
 }
 #links {
-    text-decoration: none;
+    margin-left: 40px;
+    list-style-type: none;
 }
