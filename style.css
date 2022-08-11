@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-body {
+body { 
     font-family: 'Open Sans', sans-serif;
+     
+} 
+* {
     margin: 0;
 }
 .container {
