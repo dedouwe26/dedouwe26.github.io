@@ -19,6 +19,9 @@ header {
     float: left;
 }
 #links {
-    margin-left: 40px;
+    font-size: 20px;
+    margin-left: 60px;
+}
+#links ul {
     list-style-type: none;
 }
