@@ -25,3 +25,10 @@ header {
 #links ul {
     list-style-type: none;
 }
+#projects {
+    display: grid; 
+    grid-template-columns: auto; 
+    grid-template-rows: auto; 
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
