@@ -7,5 +7,5 @@ header {
     border-radius: 8px;
     height: 150px;
     margin: 5px;
-    max-width: max-content;
+    width: max-content;
 }
