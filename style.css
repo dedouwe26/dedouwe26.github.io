@@ -6,6 +6,6 @@ header {
     background-color: lightgray;
     border-radius: 8px;
     height: 150px;
-    width: 100%;
-    margin: 10px;
+    margin: 5px;
+    max-width: max-content;
 }
