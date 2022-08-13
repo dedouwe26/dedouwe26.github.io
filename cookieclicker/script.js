@@ -19,7 +19,13 @@ const kostenPowerups = {
     3:100,
     4:500
 }
-
+const clickerOpbrengst = {
+    0:[1,2],
+    1:[5,10],
+    2:[10,20],
+    3:[25,50],
+    4:[50,100]
+}
 let powerups=[false, false, false, false, false];
 
 let money=0;
@@ -27,6 +33,13 @@ let geldPerSeconde=0;
 
 const geldDiv=document.getElementById('geld')
 const geldPerSecondeDiv=document.getElementById('geldPerSeconde')
+
+// Hover wordt hier ingesteld.
+Array.prototype.slice.call(document.getElementsByClassName('tier')).forEach(el => {
+    el.onHover = () => {
+
+    }
+});
 
 /* Voeg een nieuw icoontje toe aan de lijst met Actieve Clickers van tier tier */
 function voegClickerToe(tier) {
@@ -72,11 +85,9 @@ function onClickCookie() {
 /* Berekent het geld dat de Clickers genereren per seconde. */
 function berekenGeldPerSeconde() {
     geldPerSeconde=0;
-    geldPerSeconde+=clickersGekocht[0] * (powerups[0] ? 2 : 1)
-    geldPerSeconde+=clickersGekocht[1]* (powerups[1] ? 10 : 5)
-    geldPerSeconde+=clickersGekocht[2]* (powerups[2] ? 20 : 10)
-    geldPerSeconde+=clickersGekocht[3]* (powerups[3] ? 50 : 25)
-    geldPerSeconde+=clickersGekocht[4]* (powerups[4] ? 100 : 50)
+    Object.entries(clickerOpbrengst).forEach((values)=>{
+        geldPerSeconde+=clickersGekocht[values[0]] * (powerups[values[0]] ? values[1][1] : values[1][0])
+    });
     updateGeldPerSeconde(geldPerSeconde)
 }
 
