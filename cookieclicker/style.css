@@ -93,7 +93,10 @@ h2 {
 	background: #463f3a;
 	padding: 20px;
 }
-
+#klikRuimte img {
+	width: fit-content;
+	height: fit-content;
+}
 /* Opmaak voor de kolom met de Actieve Clickers */
 #actieveClickers {
 	float: left;
