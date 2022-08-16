@@ -31,16 +31,41 @@ let powerups=[false, false, false, false, false];
 let money=0;
 let geldPerSeconde=0;
 
+let showPanel=false;
+
 const geldDiv=document.getElementById('geld')
 const geldPerSecondeDiv=document.getElementById('geldPerSeconde')
 
 // Hover wordt hier ingesteld.
-Array.prototype.slice.call(document.getElementsByClassName('tier')).forEach(el => {
-    el.onHover = () => {
-
+document.addEventListener('mousemove',(e)=>{
+    if (showPanel) {
+        e = e || window.event;
+        document.getElementById('panel').style.left=e.clientX+'px';
+        document.getElementById('panel').style.top=e.clientY+'px';
     }
+    
 });
 
+Array.prototype.slice.call(document.getElementsByClassName('tier')).forEach(el => {
+    el.onHover = () => {
+        let panel = document.createElement('div');
+        panel.id='panel';
+        panel.innerHTML='<div id="name"></div><div id="discription"></div>';
+        panel.style.border='5px brown solid';
+        panel.style.borderRadius='4px';
+        panel.style.width='200px';
+        panel.style.height='150px';
+        panel.style.position='absolute';
+        document.body.appendChild(panel);
+    }
+    el.addEventListener('mousemove',(e)=>{
+        document.getElementById('panel').style.left=e.clientX+'px';
+        document.getElementById('panel').style.top=e.clientY+'px';
+    });
+    el.addEventListener('mouseout',(e)=>{
+        document.getElementById('panel').remove();
+    });
+});
 /* Voeg een nieuw icoontje toe aan de lijst met Actieve Clickers van tier tier */
 function voegClickerToe(tier) {
     let el = document.createElement('img');
