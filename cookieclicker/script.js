@@ -50,7 +50,7 @@ Array.prototype.slice.call(document.getElementsByClassName('tier')).forEach(el =
     el.onHover = () => {
         let panel = document.createElement('div');
         panel.id='panel';
-        panel.innerHTML='<div id="name"></div><div id="discription"></div>';
+        panel.innerHTML='<div id="name">test</div><div id="discription">hello</div>';
         panel.style.border='5px brown solid';
         panel.style.borderRadius='4px';
         panel.style.width='200px';
