@@ -1,2 +1,4 @@
 # dedouwe26.github.io
-regular github page...?
+Is it a regular GitHub page?
+The index is at `/index.html` \
+[Page](https://dedouwe26.github.io/)
